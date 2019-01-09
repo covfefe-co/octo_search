@@ -18,7 +18,11 @@ RSpec.describe GithubAPI do
       before do
         stub_request(:get, 'https://api.github.com/search/repositories?q=tetris')
           .with(headers: { 'Accept' => 'application/json', 'User-Agent' => 'octo_search' })
-          .to_return(status: 200, body: { items: expected_result }.to_json, headers: {})
+          .to_return(
+            status: 200,
+            body: { items: expected_result }.to_json,
+            headers: { 'Content-Type' => 'application/json' }
+          )
       end
 
       it 'returns the result items' do

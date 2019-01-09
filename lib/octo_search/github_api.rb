@@ -8,7 +8,7 @@ class GithubAPI
     def search(query)
       response = HTTParty.get(API_URL, query: { q: query }, headers: HEADERS)
 
-      response.success? ? JSON.parse(response)['items'] : []
+      response.success? ? response.parsed_response['items'] : []
     end
   end
 
