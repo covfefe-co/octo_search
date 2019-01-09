@@ -1,24 +1,16 @@
-# README
+# OctoSearch
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Search Github repositories
 
-Things you may want to cover:
+## How to Install
 
-* Ruby version
+Project uses `docker-compose` so if you already have Docker, follow the below instructions.
 
-* System dependencies
+- Clone the project
+- Copy `.env.sample` to `.env.dev`
+- Run `make setup` which will build the Docker image and install gems
+- Run `make up` which will run the web server in docker image.
 
-* Configuration
+Visit `localhost:3000`
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+For running tests, run `make test`.
