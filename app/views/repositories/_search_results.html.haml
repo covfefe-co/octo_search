@@ -1,0 +1,12 @@
+%table.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th{ style: 'width: 20%' }= t('.owner')
+      %th{ style: 'width: 20%' }= t('.name')
+      %th{ style: 'width: 45%' }= t('.description')
+      %th{ style: 'width: 10%' }= t('.language')
+      %th{ style: 'width: 5%' }= t('.star_count')
+
+  %tbody
+    = render partial: 'repository', collection: repositories
+

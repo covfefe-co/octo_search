@@ -1,0 +1,16 @@
+.container#repositories
+  .row
+    .container.search-form
+      .form
+        = form_with(url: root_path, method: :GET, data: { remote: false }) do |f|
+          .form-group.row
+            %label{ for: :search_criteria, class: 'col-sm-2 col-form-label' }
+              = t('.search_criteria')
+            .col-sm-10
+              = f.text_field :search, value: params[:search]
+              = submit_tag t('.search'), class: 'btn btn-sm'
+      .container
+        - if @repositories
+          = render partial: 'search_results', locals: { repositories: @repositories }
+        - else
+          = render partial: 'tips'

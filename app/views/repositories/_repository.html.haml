@@ -1,0 +1,8 @@
+%tr
+  %td
+    = image_tag repository.owner.avatar_url, height: '15px'
+    = link_to repository.owner.login, repository.owner.url, target: :_blank
+  %td= link_to repository.name, repository.url, target: :_blank
+  %td= repository.description.to_s.truncate(55)
+  %td= repository.language
+  %td= repository.star_count
