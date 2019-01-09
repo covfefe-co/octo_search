@@ -25,3 +25,5 @@
 
 .env.*
 !.env.example
+
+spec/examples.txt
